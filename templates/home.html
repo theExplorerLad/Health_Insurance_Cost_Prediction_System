@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+  <div>
+    <div class="container">
+      <h1>HEALTH INSURANCE COST PREDICTION SYSTEM</h1>
+      <form method="post">
+
+        <div class="inputbox">
+          Age:<input type="number" name="a" placeholder="Enter your age">
+
+          Dependent:<input type="number" placeholder="Enter your Dependent">
+          Gender:<input type="checkbox" value="m" name="Gender">Male
+                <input type="checkbox" value="f" name="Gender">Female <br><br><br><br><br><br>
+
+          BMI:<input type="number" placeholder="Enter your bmi">
+          Region:<select name="Region" id="Region" placeholder="Enter your region">
+            <option value="select a region">Please select a country</option>
+            <option value="Northeast">Northeast</option>
+            <option value="Northwest">Northwest</option>
+            <option value="Southeast">Southeast</option>
+            <option value="Southwest">Southwest</option>
+          </select>
+          Smoker:<input type="checkbox" value="y" name="Gender"/>Yes
+          <input type="checkbox" value="n" name="Gender"/>No<br><br>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Predict">
+          <input type="Reset" value="Reset">
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    }
+
+    nav {
+        background-color: rgb(46, 181, 181);
+        height: 50px;
+    }
+
+    .container {
+        height: 100vh;
+        background-image: url("/image/2022-08-Website-Header-Healthcare-v2.jpg");
+        background-size: cover;
+    }
+
+    .container h1 {
+        position: center;
+        padding-left: 330px;
+        padding-top: 50px;
+    }
+
+    .inputbox {
+        padding-top: 200px;
+        padding-left: 320px;
+        word-spacing: 5vh;
+        color: rgb(18, 11, 11);
+        font-size: large;
+    }
+
+    .inputbox input {
+        border-radius: 5px;
+        border-color: rgb(14, 9, 9);
+        background-color: transparent;
+        color: rgb(20, 11, 11);
+        word-spacing: normal;
+    }
+
+    .inputbox select {
+        border-radius: 5px;
+        background-color: transparent;
+        color: rgb(1, 0, 0);
+        border-color: black;
+    }
+
+    .inputbox select option {
+        border-radius: 5px;
+        background-color: transparent;
+        color: rgb(18, 11, 11);
+    }
+
+    .button {
+        position: center;
+        padding-left: 550px;
+        padding-top: 50px;
+        word-spacing: 5vh;  
+    }       
+
+    .button input {
+        background-color: transparent;
+        border-radius: 5px;
+        border-style: groove;   
+    }
+  </style>
+
+</body>
+</html>
