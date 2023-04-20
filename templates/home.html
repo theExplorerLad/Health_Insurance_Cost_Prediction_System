@@ -3,109 +3,65 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <div>
-    <div class="container">
-      <h1>HEALTH INSURANCE COST PREDICTION SYSTEM</h1>
-      <form method="post">
+  <div class="container">
 
-        <div class="inputbox">
-          Age:<input type="number" name="a" placeholder="Enter your age">
-
-          Dependent:<input type="number" placeholder="Enter your Dependent">
-          Gender:<input type="checkbox" value="m" name="Gender">Male
-                <input type="checkbox" value="f" name="Gender">Female <br><br><br><br><br><br>
-
-          BMI:<input type="number" placeholder="Enter your bmi">
-          Region:<select name="Region" id="Region" placeholder="Enter your region">
-            <option value="select a region">Please select a country</option>
-            <option value="Northeast">Northeast</option>
-            <option value="Northwest">Northwest</option>
-            <option value="Southeast">Southeast</option>
-            <option value="Southwest">Southwest</option>
-          </select>
-          Smoker:<input type="checkbox" value="y" name="Gender"/>Yes
-          <input type="checkbox" value="n" name="Gender"/>No<br><br>
-        </div>
-
-        <div class="button">
-          <input type="submit" value="Predict">
-          <input type="Reset" value="Reset">
-        </div>
-
-      </form>
-    </div>
+    <h2>REMOVE THE WORRY FROM<br>
+       LIFE WITH INSURANCE
+    </h2>
+    <p>
+      Health insurance is type of insurance that<br>
+      covers the whole or a part of the risk of a <br>
+      person incurring medical expenses.
+    </p>
+       <form action="{{ url_for('predict')}}"method="post">						          
+        <input type="number" id="age" name="age" placeholder="Enter the Age" required="">
+          
+        <select id="sex" name="sex">
+          <option value="" selected data-default>Select Sex</option>
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select><br><br>
+          
+      
+        <input type="text" id="bmi" name="bmi" placeholder="Enter Body mass Index" required="">
+          
+        <select id="children" name="children">
+          <option value="" selected data-default>Select No. of children</option>
+          <option value="0">None</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br></br>
+          
+        <select id="smoker" name="smoker">
+          <option value="" selected data-default>Smoker?</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+          
+        <select id="region" name="region">
+          <option value="" selected data-default>Select Region</option>
+          <option value="0">North East</option>
+          <option value="1">North West</option>
+          <option value="2">South East</option>
+          <option value="3">South West</option>
+        </select><br><br>
+          
+        <input type="submit" value="Predict">
+        </form>
   </div>
 
-  <style>
-    * {
-    margin: 0;
-    padding: 0;
-    }
-
-    nav {
-        background-color: rgb(46, 181, 181);
-        height: 50px;
-    }
-
-    .container {
-        height: 100vh;
-        background-image: url("/image/2022-08-Website-Header-Healthcare-v2.jpg");
-        background-size: cover;
-    }
-
-    .container h1 {
-        position: center;
-        padding-left: 330px;
-        padding-top: 50px;
-    }
-
-    .inputbox {
-        padding-top: 200px;
-        padding-left: 320px;
-        word-spacing: 5vh;
-        color: rgb(18, 11, 11);
-        font-size: large;
-    }
-
-    .inputbox input {
-        border-radius: 5px;
-        border-color: rgb(14, 9, 9);
-        background-color: transparent;
-        color: rgb(20, 11, 11);
-        word-spacing: normal;
-    }
-
-    .inputbox select {
-        border-radius: 5px;
-        background-color: transparent;
-        color: rgb(1, 0, 0);
-        border-color: black;
-    }
-
-    .inputbox select option {
-        border-radius: 5px;
-        background-color: transparent;
-        color: rgb(18, 11, 11);
-    }
-
-    .button {
-        position: center;
-        padding-left: 550px;
-        padding-top: 50px;
-        word-spacing: 5vh;  
-    }       
-
-    .button input {
-        background-color: transparent;
-        border-radius: 5px;
-        border-style: groove;   
-    }
-  </style>
-
+{{prediction_text}}
+  
 </body>
 </html>
