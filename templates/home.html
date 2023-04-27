@@ -13,23 +13,30 @@
 <body>
   <div class="container">
 
-    <h2>Know your Health Insurance Cost</h2>
-    <p>
-      Reduce the risk of unexpected medical expenses by getting a health insurance plan. <br>
-      Stay healthy and get the best treatment for your illness or injury. <br>
+    <h2>HEALTH INSURANCE COST PREDICTION SYSTEM
+    </h2>
+    <p>Health insurance is type of insurance that
+      covers the whole or a part of the risk of a <br>
+      person incurring medical expencess
     </p>
-       <form action="{{ url_for('predict')}}"method="post">						          
+    <form action="{{ url_for('predict')}}"method="post">						          
+      <div class="inputbox">
         <input type="number" id="age" name="age" placeholder="Enter the Age" required="">
-          
+
         <select id="sex" name="sex">
           <option value="" selected data-default>Select Sex</option>
           <option value="0">Male</option>
           <option value="1">Female</option>
-        </select><br><br>
-          
-      
-        <input type="text" id="bmi" name="bmi" placeholder="Enter Body mass Index" required="">
-          
+        </select>
+
+        <input type="number" step="0.001" id="bmi" name="bmi" placeholder="Enter Body mass Index" required=""><br><br>
+
+        <select id="smoker" name="smoker">
+          <option value="" selected data-default>Smoker?</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
         <select id="children" name="children">
           <option value="" selected data-default>Select No. of children</option>
           <option value="0">None</option>
@@ -38,14 +45,8 @@
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select><br></br>
-          
-        <select id="smoker" name="smoker">
-          <option value="" selected data-default>Smoker?</option>
-          <option value="0">No</option>
-          <option value="1">Yes</option>
         </select>
-          
+
         <select id="region" name="region">
           <option value="" selected data-default>Select Region</option>
           <option value="0">North East</option>
@@ -54,10 +55,12 @@
           <option value="3">South West</option>
         </select><br><br>
           
-        <input type="submit" value="Predict">
-      </form>
+         <div class="button"><input type="submit"value="predict" >
+         <input type="reset" value="reset"></div>
+         <div class="predict"> {{prediction_text}}</div>
+        </form>
+        
   </div>
-
   <!-- style for the web -->
   <style>
     * {
@@ -84,7 +87,7 @@
         font-size: medium;
     }
     
-    .inputbox {
+    .inputbox {    
         width: 50%;
         height: 300%;
         filter: blur(-1px);
@@ -100,7 +103,7 @@
 
     .inputbox input {
         padding: 1%;
-        border-radius: 10%;
+        border-radius: 10%; 
         background-color: transparent;
     }
     
@@ -123,12 +126,12 @@
                 rgba(55, 189, 220, 1) 40%,
                 rgba(54, 175, 202, 1) 49%, rgba(53, 156, 175, 1) 62%, rgba(48, 97, 96, 1));
     }
-
+    
     .predict{
         padding-left: 20%;
         padding-bottom: 5%;
     }
-  </style>
+    </style>
 
 </body>
 </html>
