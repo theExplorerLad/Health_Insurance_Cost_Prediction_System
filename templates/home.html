@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
+  <title>HEALTH INSURANCE COST PREDICTION SYSTEM</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -13,13 +13,10 @@
 <body>
   <div class="container">
 
-    <h2>REMOVE THE WORRY FROM<br>
-       LIFE WITH INSURANCE
-    </h2>
+    <h2>Know your Health Insurance Cost</h2>
     <p>
-      Health insurance is type of insurance that<br>
-      covers the whole or a part of the risk of a <br>
-      person incurring medical expenses.
+      Reduce the risk of unexpected medical expenses by getting a health insurance plan. <br>
+      Stay healthy and get the best treatment for your illness or injury. <br>
     </p>
        <form action="{{ url_for('predict')}}"method="post">						          
         <input type="number" id="age" name="age" placeholder="Enter the Age" required="">
@@ -58,10 +55,80 @@
         </select><br><br>
           
         <input type="submit" value="Predict">
-        </form>
+      </form>
   </div>
 
-{{prediction_text}}
-  
+  <!-- style for the web -->
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        background-image: url("health.jpg");
+        background-size: cover;
+        height: 100vh;
+        display:block;
+    }
+    
+    .container h2 {
+        padding-left: 30%;
+        padding-top: 8%;
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(17, 14, 11);
+    }
+    
+    .container p {
+        padding-left: 30%;
+        font-size: medium;
+    }
+    
+    .inputbox {
+        width: 50%;
+        height: 300%;
+        filter: blur(-1px);
+        position: center;
+        border-radius: 10px;
+        word-spacing: 10px;
+        margin-left: 25%;
+        margin-top: 65px;
+        box-shadow: 8px 8px 8px 8px;
+       padding-left: 5%;
+       padding-top: 5%;
+    }
+
+    .inputbox input {
+        padding: 1%;
+        border-radius: 10%;
+        background-color: transparent;
+    }
+    
+    .inputbox select {
+        padding: 1%;
+        border-radius:10%;
+        background-color: transparent;
+    }
+    
+    .button {
+        padding-left: 20%;
+        padding-bottom: 50px;
+        word-spacing: 50%;
+    }
+    
+    .button input {
+        background-color: transparent;
+        width: 20%;
+        background-image: radial-gradient(circle farthest-side, rgba(57, 210, 248, 1) 14% 27%,
+                rgba(55, 189, 220, 1) 40%,
+                rgba(54, 175, 202, 1) 49%, rgba(53, 156, 175, 1) 62%, rgba(48, 97, 96, 1));
+    }
+
+    .predict{
+        padding-left: 20%;
+        padding-bottom: 5%;
+    }
+  </style>
+
 </body>
 </html>
