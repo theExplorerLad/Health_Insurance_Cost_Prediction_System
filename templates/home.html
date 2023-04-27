@@ -13,12 +13,11 @@
 <body>
   <div class="container">
 
-    <h2>HEALTH INSURANCE COST PREDICTION SYSTEM
-    </h2>
-    <p>Health insurance is type of insurance that
-      covers the whole or a part of the risk of a <br>
-      person incurring medical expencess
-    </p>
+    <h2>Health Insurance Cost Prediction</h2>
+        <p>Fill the details below to predict the cost of health insurance.<br></br>
+          <b>NOTE:</b> The prediction is based on the data of 1338 people.
+          Get the dataset <a href="https://www.kaggle.com/mirichoi0218/insurance">here</a>
+        </p>
     <form action="{{ url_for('predict')}}"method="post">						          
       <div class="inputbox">
         <input type="number" id="age" name="age" placeholder="Enter the Age" required="">
